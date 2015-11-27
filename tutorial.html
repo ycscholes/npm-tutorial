@@ -1,7 +1,133 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
+    <head>
+        <meta charset="utf-8">
+        <title>前端分享</title>
+        <link rel="stylesheet" href="reveal/css/reveal.css">
+        <link rel="stylesheet" href="reveal/css/theme/black.css" id="theme">
+    </head>
     <body>
-        I am
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>项目开源</h1>
+                    <p>喻晨</p>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Agenda
+
+- 创建 github 项目
+- 发布到NPM
+- 发布到bower(Optional)
+                    </script>
+                </section>
+                <section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## 创建github项目流程
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+## 创建方式
+- github 网站
+- github 客户端
+- 命令行
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+## 项目结构
+- 必要文件 README.md(项目首页显示), LICENSE, .gitignore
+- 可选文件 package.json，bower.json
+
+![alt text](./images/1.png "Title")
+                        </script>
+                    </section>
+                    <section id="fragments">
+                        <h2>项目站点ph-pages</h2>
+                        <ul>
+                            <li>进入项目设置自动创建GitHub Pages</li>
+                        </ul>
+                    </section>
+                </section>
+                <section>
+                    <section>
+                        <h2 id="fragments">发布NPM包</h2>
+                        <ul>
+                            <li class="fragment">安装node和npm</li>
+                            <li class="fragment">创建repository</li>
+                            <li class="fragment">初始化package.json</li>
+                            <li class="fragment">持续集成</li>
+                            <li class="fragment">发布</li>
+                        </ul>
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+### package.json
++ name: url valid
++ version: 规则采用的是semver(语义化版本）
+    - 主版号：当你做了不相容的 API 修改，
+    - 次版号：当你做了向下相容的功能性新增，
+    - 修订号：当你做了向下相容的问题修正。
+    - 先行版号及版本编译资讯可以加到「主版号.次版号.修订号」的后面，作为延伸
++ script: 使用npm run {command} 运行
++ dependencies: 项目依赖
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+### 持续集成
+- .travis.yml
+                        </script>
+                    </section>
+                    <section>
+                    <h2 id="fragments">发布</h2>
+                        <ul>
+                            <li class="fragment">注册 <a href="https://www.npmjs.com/">npm官网</a> 账号 </li>
+                            <li class="fragment">本地添加npm用户（npm adduser）</li>
+                            <li class="fragment">发布 (npm publish)</li>
+                            <li class="fragment">到 <a href="https://www.npmjs.com/">npm官网</a> 进行查看</li>
+                        </ul>
+                    </section>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+                        ## bower 发布
+
+- 初始化 bower.json
+- 发布 bower register {name} {repository url}
+                    </script>
+                </section>
+            </div>
+        </div>
     </body>
+    <script src="reveal/lib/js/head.min.js"></script>
+    <script src="reveal/js/reveal.js"></script>
+    <script>
+
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [
+                { src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: 'reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'reveal/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: 'reveal/plugin/zoom-js/zoom.js', async: true },
+                { src: 'reveal/plugin/notes/notes.js', async: true }
+            ]
+        });
+
+    </script>
 </html>
