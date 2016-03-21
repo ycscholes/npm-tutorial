@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>前端分享</title>
+        <link rel="stylesheet" href="reveal/css/reveal.css">
+        <link rel="stylesheet" href="reveal/css/theme/black.css" id="theme">
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <h1>Clipboard 操作</h1>
+                    <p>喻晨</p>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Agenda
+
+- Clipboard 事件
+- 事件参数
+- Demo
+                    </script>
+                </section>
+                <section>
+                    <section data-markdown>
+                        <script type="text/template">
+## Clipboard 事件
+[文档链接](https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEvent "Title")
+                            
+                        </script>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+## 事件类型
+- Copy
+- Paste
+- Cut
+                        </script>
+                    </section>
+                    <!-- <section data-markdown>
+                        <script type="text/template">
+## 事件触发
+- execCommand [文档链接](https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand "Title")
+                        </script>
+                    </section> -->
+                </section>
+                <section>
+                    <section data-markdown>
+                        <script type="text/template">
+## clipboardData 
+[文档链接](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer "Title")
+                        </script>
+                    </section>
+                <section data-markdown>
+                    <script type="text/template">
+                        ## 获取clipboardData
+
+- event.clipboardData  
+- jquery event.originalEvent.clipboardData
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+                        ## 结构
+
++ 属性
+    - files
+    - items
+    - types
++ 方法
+    - getData(type)
+                    </script>
+                </section>
+
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+                        ## Demo
+- [点我！！！！](./demo.html "Title")
+                    </script>
+                </section>
+            </div>
+        </div>
+    </body>
+    <script src="reveal/lib/js/head.min.js"></script>
+    <script src="reveal/js/reveal.js"></script>
+    <script>
+
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [
+                { src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: 'reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'reveal/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: 'reveal/plugin/zoom-js/zoom.js', async: true },
+                { src: 'reveal/plugin/notes/notes.js', async: true }
+            ]
+        });
+
+    </script>
+</html>
