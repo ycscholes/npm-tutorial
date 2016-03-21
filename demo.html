@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>前端分享</title>
+        <style type="text/css">
+            body > * {
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>111111111121</div>
+        <input type="text">
+        <div id="editable" contenteditable style="height: 200px">可编辑</div>
+    </body>
+    <script src="./jquery.min.js"></script>
+    <script type="text/javascript">
+    $('body').children().on('cut paste copy', function(e) {
+        console.log(e.originalEvent.clipboardData);
+        debugger
+    });
+
+    $('input').focus();
+    document.designMode = "on";
+    document.execCommand("paste", true, 'adsfasd');
+
+    </script>
+</html>
